@@ -1,0 +1,2 @@
+CREATE DATABASE Group_10;
+USE Group_10;
