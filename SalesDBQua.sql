@@ -104,6 +104,7 @@ SELECT
 	END GenderFF
 FROM 
     Sales.Employees;
+	
 
 -- Retrieve customer details with abbreviated country code
 SELECT 
@@ -119,3 +120,14 @@ SELECT
 FROM 
     Sales.Customers;
 
+-- Count how many times each customer has made an order with sales greater than 30
+SELECT 
+    OrderID,
+    CustomerID,
+    Sales,
+    CASE 
+        WHEN Sales > 30 THEN 1
+        ELSE 0
+    END AS SalesFlag
+FROM Sales.Orders
+ORDER BY CustomerID;
